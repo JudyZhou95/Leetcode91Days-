@@ -52,7 +52,7 @@ class Solution:
         return l/2
 ```
 ## Analysis 
-It ask for the minimum possible radius. One way to solve it is that binary search among the possible radius space, define a function to test if the input radius is enough to cover all the houses, and find the minimum radius which is enough. The difficult part is how to define this helper function. It "bisect_right" each light's cover range one by one into the sorted array of houses to see which houses are covered by each light. The cover range always starts with the next to be covered house coordinate and ends with the coordinate+diameter. 
+It asks for the minimum possible radius. One way to solve it is that binary search among the possible radius space, define a function to test if the input radius is enough to cover all the houses, and find the minimum radius which is enough. The difficult part is how to define this helper function. It "bisect_right" each light's cover range one by one into the sorted array of houses to see which houses are covered by each light. The cover range always starts with the next to be covered house coordinate and ends with the coordinate+diameter. 
 
 **Time Complexity**: Sort the nums array is O(nlogn). Main binary search loop is O(log(max(nums)-min(nums))), bisect_right inside the helper function is O(logn). Overall is O(nlogn + logn*log(max(nums)-min(nums))\
 **Space Complexity**: O(n) (Depends on the space used in sorting algorithm).
